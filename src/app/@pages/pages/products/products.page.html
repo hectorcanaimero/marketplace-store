@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar #toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [scrollEvents]="true" [appFadeHeader]>
+  <ion-segment mode="ios" scrollable value="categories" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="categories">
+      <ion-label>Categorias</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="product">
+      <ion-label>Productos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="promotion">
+      <ion-label>Promocion</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div class="container mt-2">
+    <div *ngIf="segment === 'categories'">
+      <app-list [data]="categories"></app-list>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+    <div *ngIf="segment === 'product'">
+      <app-list-product></app-list-product>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="tertiary">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+    <div *ngIf="segment === 'promotion'">
+      <ion-label>Promocion</ion-label>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="danger">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+  </div>
+  <div style="height: 110px;"></div>
+</ion-content>

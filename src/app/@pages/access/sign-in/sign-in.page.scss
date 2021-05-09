@@ -1,0 +1,14 @@
+.remenber {
+  ion-item {
+    --padding-start: 0px;
+    --min-height: 24px;
+    ion-radio[slot="start"] {
+      margin-right: unset;
+      margin-inline-end: 10px !important;
+    }
+  }
+}
+.forgot-password{
+  margin-top: .9rem;
+  width: 100%;
+}

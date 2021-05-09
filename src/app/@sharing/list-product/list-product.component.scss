@@ -1,0 +1,14 @@
+ion-item {
+    --min-height: 55px;
+    --padding-start: 0px;
+    ion-label {
+      padding-left: 8px;
+    }
+    ion-thumbnail {
+      --size: 36px;
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
+  

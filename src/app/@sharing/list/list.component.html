@@ -1,0 +1,12 @@
+<ion-list>
+  <ion-item lines="none" *ngFor="let item of data; let index = index; trackBy: trackByFunction">
+    <ion-icon slot="start" name="list-outline" *ngIf="!item.media"></ion-icon>
+    <ion-thumbnail *ngIf="item.media">
+      <img [src]="item.media" />
+    </ion-thumbnail>
+    <ion-label>
+      <p>Productos {{ 10 + index }}</p>
+      <h2>{{ item.name }}- {{ index }}</h2>
+    </ion-label>
+  </ion-item>
+</ion-list>
